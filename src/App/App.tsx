@@ -1,7 +1,7 @@
 import './App.scss'
 
 const App = () => {
-  return <div>Hello!</div>
+  return <div>Hello World!</div>
 }
 
 export default App
