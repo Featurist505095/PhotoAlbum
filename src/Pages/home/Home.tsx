@@ -2,7 +2,7 @@ import React from 'react'
 import Header from '../../Components/Header/Header'
 import Main from '../../Components/Main'
 
-const HomeView = () => {
+const Home = () => {
   return (
     <>
       <Header />
@@ -11,4 +11,4 @@ const HomeView = () => {
   )
 }
 
-export default HomeView
+export default Home
