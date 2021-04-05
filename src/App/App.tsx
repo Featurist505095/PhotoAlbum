@@ -1,7 +1,8 @@
+import HomeView from '../Pages/home'
 import './App.scss'
 
 const App = () => {
-  return <div>Hello World!</div>
+  return <HomeView />
 }
 
 export default App

@@ -1,0 +1,43 @@
+.user-block {
+  padding: 60px 40px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  color: #666d89;
+}
+
+.user-info {
+  max-width: 300px;
+}
+
+.user-photo {
+  display: block;
+  width: 300px;
+  height: 300px;
+  background-image: url('../../assets/images/user.jpg');
+}
+
+.user-name {
+  padding: 5px 0;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 18px;
+  color: #666d89;
+}
+
+.user-description {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 22px;
+  text-align: justify;
+  color: #767e9e;
+}
+
+.user-albums {
+  padding-left: 40px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
