@@ -14,11 +14,11 @@ const Album = () => {
   const { photos } = useSelector(stateSelector)
   const dispatch = useDispatch()
   const query = useQuery()
-  const albumId = query.get('album') || 1
+  const albumId = query.get('album') || '1'
 
   useEffect(() => {
     dispatch(getPhotoImages(albumId))
-  }, [albumId])
+  }, [albumId, dispatch])
 
   return (
     <div className="album">

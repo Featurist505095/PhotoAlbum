@@ -1,11 +1,16 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import { useLocation } from 'react-router-dom'
 import AlbumListItem from '../AlbumListItem'
 import './AlbumList.scss'
 
+interface AlbumListProps {
+  albums?: [{ id: number; title: string }]
+  user: string
+}
+
 const useQuery = () => new URLSearchParams(useLocation().search)
 
-const AlbumList = ({ albums, user }) => {
+const AlbumList: FunctionComponent<AlbumListProps> = ({ albums, user }) => {
   const query = useQuery()
   const selected = Number(query.get('album')) || 1
   const albumList = albums

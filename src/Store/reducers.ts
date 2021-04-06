@@ -7,15 +7,32 @@ import {
   GET_USER_FULFILLED,
 } from './actionCreators'
 
-const initialState = {
-  authorID: 1,
-  album: 1,
-  photos: [],
+type payloadType = {
+  user?: { name: string; company: { catchPhrase: string } }
+  albums?: [{ id: number; title: string }]
+  photos?: [
+    {
+      albumId: number
+      id: number
+      title: string
+      url: string
+      thumbnailUrl: string
+    }
+  ]
 }
 
-export const stateSelector = (state: any) => state
+const initialState = {
+  user: undefined,
+  albums: undefined,
+  photos: undefined,
+}
 
-const reducer = (state = initialState, action: { type: any; payload: any }) => {
+export const stateSelector = (state: payloadType) => state
+
+const reducer = (
+  state: payloadType = initialState,
+  action: { type: string; payload?: any }
+) => {
   switch (action.type) {
     case GET_PHOTO_IMAGES: {
       return {

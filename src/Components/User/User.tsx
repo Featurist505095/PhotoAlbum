@@ -11,15 +11,15 @@ const useQuery = () => new URLSearchParams(useLocation().search)
 const User = () => {
   const { user, albums } = useSelector(stateSelector)
   const userName = user ? user.name : ' '
-  const userInfo = user ? user.company.catchPhrase : ' '
+  const userInfo = user && user.company ? user.company.catchPhrase : ' '
   const dispatch = useDispatch()
   const query = useQuery()
-  const userId = query.get('user') || 1
+  const userId = query.get('user') || '1'
 
   useEffect(() => {
     dispatch(getUser(userId))
     dispatch(getUserAlbums(userId))
-  }, [])
+  }, [userId, dispatch])
 
   return (
     <div className="user-block">

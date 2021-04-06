@@ -1,7 +1,7 @@
 export const GET_PHOTO_IMAGES = 'GET_PHOTO_IMAGES'
 export const GET_PHOTO_IMAGES_FULFILLED = 'GET_PHOTO_IMAGES_FULFILLED'
 
-export const getPhotoImages = (albumId) => {
+export const getPhotoImages = (albumId: string) => {
   const url = `https://jsonplaceholder.typicode.com/photos?albumId=${albumId}`
 
   return {
@@ -13,7 +13,7 @@ export const getPhotoImages = (albumId) => {
 export const GET_USER = 'GET_USER'
 export const GET_USER_FULFILLED = 'GET_USER_FULFILLED'
 
-export const getUser = (userId) => {
+export const getUser = (userId: string) => {
   const url = `https://jsonplaceholder.typicode.com/users/${userId}`
 
   return {
@@ -25,7 +25,7 @@ export const getUser = (userId) => {
 export const GET_USER_ALBUMS = 'GET_USER_ALBUMS'
 export const GET_USER_ALBUMS_FULFILLED = 'GET_USER_ALBUMS_FULFILLED'
 
-export const getUserAlbums = (userId) => {
+export const getUserAlbums = (userId: string) => {
   const url = `https://jsonplaceholder.typicode.com/users/${userId}/albums`
 
   return {

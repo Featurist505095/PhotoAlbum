@@ -1,8 +1,19 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import { Link } from 'react-router-dom'
 import './AlbumListItem.scss'
 
-const AlbumListItem = ({ id, selected, name, user }) => {
+interface AlbumListItemProps {
+  id: number
+  selected: number
+  name: string
+  user: string
+}
+const AlbumListItem: FunctionComponent<AlbumListItemProps> = ({
+  id,
+  selected,
+  name,
+  user,
+}) => {
   const classNames =
     selected === id ? 'album-list-item selected' : 'album-list-item'
 
