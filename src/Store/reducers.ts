@@ -1,3 +1,12 @@
+import {
+  GET_PHOTO_IMAGES,
+  GET_PHOTO_IMAGES_FULFILLED,
+  GET_USER,
+  GET_USER_ALBUMS,
+  GET_USER_ALBUMS_FULFILLED,
+  GET_USER_FULFILLED,
+} from './actionCreators'
+
 const initialState = {
   authorID: 1,
   album: 1,
@@ -8,34 +17,34 @@ export const stateSelector = (state: any) => state
 
 const reducer = (state = initialState, action: { type: any; payload: any }) => {
   switch (action.type) {
-    case 'GET_PHOTO_IMAGES': {
+    case GET_PHOTO_IMAGES: {
       return {
         ...state,
       }
     }
-    case 'GET_PHOTO_IMAGES_FULFILLED': {
+    case GET_PHOTO_IMAGES_FULFILLED: {
       return {
         ...state,
         photos: action.payload,
       }
     }
-    case 'GET_USER': {
+    case GET_USER: {
       return {
         ...state,
       }
     }
-    case 'GET_USER_FULFILLED': {
+    case GET_USER_FULFILLED: {
       return {
         ...state,
         user: action.payload,
       }
     }
-    case 'GET_USER_ALBUMS': {
+    case GET_USER_ALBUMS: {
       return {
         ...state,
       }
     }
-    case 'GET_USER_ALBUMS_FULFILLED': {
+    case GET_USER_ALBUMS_FULFILLED: {
       return {
         ...state,
         albums: action.payload,
