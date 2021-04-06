@@ -26,6 +26,7 @@ const AlbumList: FunctionComponent<AlbumListProps> = ({ albums, user }) => {
         )
       })
     : undefined
+
   return <div className="album_list">{albumList}</div>
 }
 

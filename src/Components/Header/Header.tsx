@@ -1,8 +1,15 @@
 import React from 'react'
-import HeaderView from './HeaderView'
+import { Link } from 'react-router-dom'
+import './Header.scss'
 
 const Header = () => {
-  return <HeaderView />
+  return (
+    <header>
+      <Link to="/home">
+        <h1 className="logo-name">The Photo Album</h1>
+      </Link>
+    </header>
+  )
 }
 
 export default Header

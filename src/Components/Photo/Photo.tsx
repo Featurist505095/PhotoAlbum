@@ -8,6 +8,7 @@ interface PhotoProps {
 
 const Photo: FunctionComponent<PhotoProps> = ({ thumbnailUrl }) => {
   const linkPath = `/profile?user=1&album=1`
+
   return (
     <div className="photo-wrapper">
       <img className="photo" src={thumbnailUrl} alt="album_image" />

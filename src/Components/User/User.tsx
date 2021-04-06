@@ -3,8 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useLocation } from 'react-router-dom'
 import { getUser, getUserAlbums } from '../../Store/actionCreators'
 import { stateSelector } from '../../Store/reducers'
-import AlbumList from '../AlbumList'
-import './User.scss'
+import UserView from './UserView'
 
 const useQuery = () => new URLSearchParams(useLocation().search)
 
@@ -22,16 +21,12 @@ const User = () => {
   }, [userId, dispatch])
 
   return (
-    <div className="user-block">
-      <div className="user-info">
-        <img className="user-photo" src="" alt="" />
-        <div className="user-name">{userName}</div>
-        <div className="user-description">{userInfo}</div>
-      </div>
-      <div className="user-albums">
-        <AlbumList albums={albums} user={userId} />
-      </div>
-    </div>
+    <UserView
+      userName={userName}
+      userId={userId}
+      userInfo={userInfo}
+      albums={albums}
+    />
   )
 }
 
