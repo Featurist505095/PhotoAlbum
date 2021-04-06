@@ -1,19 +1,35 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { useLocation } from 'react-router-dom'
+import { getUser, getUserAlbums } from '../../Store/actionCreators'
+import { stateSelector } from '../../Store/reducers'
+import AlbumList from '../AlbumList'
 import './User.scss'
 
+const useQuery = () => new URLSearchParams(useLocation().search)
+
 const User = () => {
+  const { user, albums } = useSelector(stateSelector)
+  const userName = user ? user.name : ' '
+  const userInfo = user ? user.company.catchPhrase : ' '
+  const dispatch = useDispatch()
+  const query = useQuery()
+  const userId = query.get('user') || 1
+
+  useEffect(() => {
+    dispatch(getUser(userId))
+    dispatch(getUserAlbums(userId))
+  }, [])
+
   return (
     <div className="user-block">
       <div className="user-info">
         <img className="user-photo" src="" alt="" />
-        <div className="user-name">Scolara Visari</div>
-        <div className="user-description">
-          Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et
-          consequat felis. Quisque condimentum.
-        </div>
+        <div className="user-name">{userName}</div>
+        <div className="user-description">{userInfo}</div>
       </div>
       <div className="user-albums">
-        <img src="" alt="user" width="300" height="300" />
+        <AlbumList albums={albums} user={userId} />
       </div>
     </div>
   )

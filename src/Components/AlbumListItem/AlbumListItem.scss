@@ -1,0 +1,24 @@
+.album-list-item {
+  display: block;
+  margin: 5px 0;
+  border-bottom: 1px solid #2d303a;
+  text-decoration: none;
+  color: #767e9e;
+
+  &__title {
+    text-decoration: underline;
+  }
+
+  &.selected {
+    color: #f06c64;
+  }
+
+  &:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
